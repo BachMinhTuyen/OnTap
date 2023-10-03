@@ -1,0 +1,32 @@
+﻿@model OnTapKiemTraLan1.Models.Songs
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>Cập nhật bài hát</h2>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/Home/Edit" method="post">
+            <div class="mb-3">
+                <label for="SongID" class="form-label">Mã Bài Hát</label>
+                <input name="SongID" type="text" class="form-control" id="SongID" value="@Model.maBH">
+            </div>
+            <div class="mb-3">
+                <label for="SongName" class="form-label">Tên Bài Hát</label>
+                <input name="SongName" type="text" class="form-control" id="SongName" value="@Model.tenBH">
+            </div>
+            <div class="mb-3">
+                <label for="TheLoaiID" class="form-label">Mã Thể Loại</label>
+                <input name="TheLoaiID" type="text" class="form-control" id="TheLoaiID" value="@Model.maTheLoai">
+            </div>
+            <div class="mb-3">
+                <label for="NhacSiID" class="form-label">Mã Nhạc Sĩ</label>
+                <input name="NhacSiID" type="text" class="form-control" id="NhacSiID" value="@Model.maNhacSi">
+            </div>
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

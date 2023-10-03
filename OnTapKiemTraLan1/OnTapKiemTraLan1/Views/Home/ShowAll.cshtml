@@ -1,0 +1,35 @@
+﻿@model List<OnTapKiemTraLan1.Models.Songs>
+@{
+    ViewBag.Title = "ShowAll";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>Danh sách tất cả bài hát</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Mã bài hát</th>
+            <th scope="col">Tên Bài Hát</th>
+            <th scope="col">Mã Thể Loại</th>
+            <th scope="col">Mã Nhạc Sĩ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td scope="row">@i.maBH</td>
+                <td>@i.tenBH</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = i.maBH })
+                    @Html.ActionLink("Delete", "Delete", new { id = i.maBH })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a class="btn btn-primary" href="#">Sort By Name</a>
+    <a class="btn btn-primary" href="/Home/ShowAll">Show All</a>
+</div>
